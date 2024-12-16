@@ -15,8 +15,11 @@ public class Bank {
     public static void showAllAccount(){
         System.out.println("All Accounts : ");
         for(int i=0;i<k;i++){
-            System.out.println(accounts[i].getCustomerName() + " " + accounts[i].getCustomerSurname() +
-                    " " + accounts[i].account().getAccountNom() + " BALANCE: "+ accounts[i].account().getBalance());
+            if(accounts[i] != null){
+                System.out.println(accounts[i].getCustomerName() + " " + accounts[i].getCustomerSurname() +
+                        " " + accounts[i].account().getAccountNom() + " BALANCE: "+ accounts[i].account().getBalance());
+            }
+
         }
     }
 
@@ -61,6 +64,20 @@ public class Bank {
 
   }
 
+
+  public static void removeAccount(String customerName, String accountNo){
+        boolean check=true;
+        for(int i=0;i<k;i++){
+            if(customerName.equals(accounts[i].getCustomerName()) && accountNo.trim().equals(accounts[i].account().getAccountNom().trim())){
+                accounts[i]=null;
+                check=false;
+                System.out.println("Account is succesfully removed!");
+            }
+        }
+        if(check){
+            System.out.println("Customer Account is not found!");
+        }
+  }
 
 
 

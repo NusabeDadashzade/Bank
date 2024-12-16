@@ -12,7 +12,8 @@ public class Main{
                 case 2-> Bank.showAllAccount();
                 case 3->MenuUtil.addDepositCase3();
                 case 4-> MenuUtil.transferMoney();
-                case 5-> System.exit(0);
+                case 5-> MenuUtil.removeAccount();
+                case 6-> System.exit(0);
 
             }
         }

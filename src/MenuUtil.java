@@ -7,7 +7,8 @@ public class MenuUtil {
                               "2.Show all Accounts \n"+
                               "3.add deposit \n" +
                                "4.Transfer Money \n"+
-                                "5.exit";
+                                "5.Remove Account\n"+
+                                "6.exit";
 
 
    public static void printmenu(){
@@ -70,6 +71,30 @@ public class MenuUtil {
       long money=scanner.nextLong();
       Bank.transferMoney(accountNo,accountNo2,money);
   }
+
+  public static void removeAccount(){
+      System.out.print("Enter Customer name -> ");
+      String name=scanner.next();
+      System.out.print("Enter Account Number-> ");
+      String accountNo=scanner.next();
+      Bank.removeAccount(name, accountNo);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
